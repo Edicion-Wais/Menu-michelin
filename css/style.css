@@ -173,11 +173,6 @@ a{color:inherit;text-decoration:none;}
 }
 .hero-wordmark{
   display:block;width:100%;height:auto;
-  filter:
-    drop-shadow(0 1px 0 rgba(255,225,180,.35))
-    drop-shadow(0 -2px 2px rgba(0,0,0,.6))
-    drop-shadow(0 3px 3px rgba(0,0,0,.45))
-    drop-shadow(0 10px 24px rgba(0,0,0,.3));
 }
 .hero-wordmark-shine{
   position:absolute;inset:0;
