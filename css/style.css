@@ -161,24 +161,20 @@ a{color:inherit;text-decoration:none;}
 }
 .hero-content{max-width:640px;display:flex;flex-direction:column;align-items:center;}
 
-.hero-presenter{
-  display:flex;align-items:center;gap:12px;margin-bottom:18px;
-  color:var(--gold-light);
-  opacity:0;animation:heroFadeUp .8s var(--ease) .1s forwards;
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
 }
-.presenter-mark{display:flex;color:var(--gold-light);}
-.presenter-word{font-family:var(--font-display);font-size:1.05rem;letter-spacing:.03em;}
-.presenter-divider{width:1px;height:22px;background:rgba(226,196,140,.5);}
-.presenter-sub{
-  font-family:var(--font-display);font-size:.72rem;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--cream-2);
+
+.hero-video-wrap{
+  width:min(760px,92vw);margin:0 auto 8px;
+  border-radius:6px;overflow:hidden;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
 }
-.hero-presents{
-  font-family:var(--font-display);font-size:.85rem;letter-spacing:.04em;
-  color:var(--cream-2);margin:0 0 30px;
-  opacity:0;animation:heroFadeUp .8s var(--ease) .3s forwards;
+.hero-video{
+  display:block;width:100%;height:auto;aspect-ratio:1176/784;
+  background:var(--wine-900);
 }
-.hero-presents strong{color:var(--gold-light);font-weight:600;}
 
 .hero-eyebrow{
   display:inline-block;font-family:var(--font-display);
@@ -186,54 +182,12 @@ a{color:inherit;text-decoration:none;}
   color:var(--gold-light);margin-top:28px;
   border-top:1px solid rgba(226,196,140,.35);
   padding-top:14px;
-  opacity:0;animation:heroFadeUp .8s var(--ease) .9s forwards;
-}
-.sr-only{
-  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
-  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
-}
-
-.hero-wordmark-wrap{
-  position:relative;width:min(560px,86vw);margin:0 auto 24px;
-  opacity:0;transform:translateY(22px) scale(.97);filter:blur(6px);
-  animation:heroLogoIn 1.1s cubic-bezier(.16,.8,.24,1) .25s forwards;
-}
-.hero-wordmark{
-  display:block;width:100%;height:auto;
-  filter:drop-shadow(0 6px 30px rgba(0,0,0,.35));
-}
-.hero-wordmark-shine{
-  position:absolute;inset:0;
-  background:linear-gradient(75deg,
-    transparent 42%,
-    rgba(255,247,230,.85) 49%,
-    rgba(255, 226, 160, .95) 51%,
-    transparent 58%);
-  background-size:280% 100%;
-  background-position:-140% 0;
-  -webkit-mask-image:url("../assets/logo-chef-michelin.png");
-          mask-image:url("../assets/logo-chef-michelin.png");
-  -webkit-mask-size:contain; mask-size:contain;
-  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
-  -webkit-mask-position:center; mask-position:center;
-  mix-blend-mode:screen;
-  opacity:0;
-  animation:heroShine 1.6s ease-out 1.3s 1 both;
+  opacity:0;animation:heroFadeUp .8s var(--ease) 4.5s forwards;
 }
 
 @keyframes heroFadeUp{
   from{opacity:0;transform:translateY(14px);}
   to{opacity:1;transform:translateY(0);}
-}
-@keyframes heroLogoIn{
-  from{opacity:0;transform:translateY(22px) scale(.97);filter:blur(6px);}
-  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
-}
-@keyframes heroShine{
-  0%{opacity:0;background-position:-140% 0;}
-  15%{opacity:1;}
-  70%{opacity:1;}
-  100%{opacity:0;background-position:140% 0;}
 }
 
 .signature{
@@ -245,7 +199,7 @@ a{color:inherit;text-decoration:none;}
 .hero-tagline{
   font-family:var(--font-display);font-style:italic;font-weight:500;
   font-size:1.15rem;color:var(--cream-2);margin:0;
-  opacity:0;animation:heroFadeUp .8s var(--ease) .7s forwards;
+  opacity:0;animation:heroFadeUp .8s var(--ease) 4.2s forwards;
 }
 
 .scroll-cue{
@@ -328,16 +282,14 @@ a{color:inherit;text-decoration:none;}
 
 /* ============ MENU ============ */
 .menu-heading{text-align:center;margin-bottom:34px;}
-.menu-title{
-  font-family:var(--font-display);font-weight:800;
-  font-size:clamp(2.4rem,6vw,3.6rem);color:var(--wine-800);
-  margin:0;letter-spacing:.02em;
+.menu-title-wordmark{
+  width:min(360px,72%);height:auto;margin:0 auto 18px;
 }
-.menu-subtitle{margin:2px 0 14px;font-size:1.5rem;color:var(--gold-dim);}
-.menu-subtitle .script-accent{font-size:1em;margin-right:6px;}
 .menu-hint{
-  font-family:var(--font-display);font-size:.78rem;letter-spacing:.14em;
-  text-transform:uppercase;color:#8a6a55;
+  display:inline-block;
+  font-family:'Manrope',sans-serif;font-weight:700;font-size:.78rem;
+  letter-spacing:.14em;text-transform:uppercase;color:#8a6a55;
+  padding-bottom:10px;border-bottom:1px solid rgba(92,18,48,.25);
 }
 
 .menu-progress{

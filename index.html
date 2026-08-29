@@ -45,19 +45,17 @@
 <section class="hero" id="top">
   <div class="hero-texture" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-presenter">
-      <span class="presenter-mark" aria-hidden="true">
-        <svg viewBox="0 0 60 44" width="30" height="22"><path d="M2 42 L18 6 L26 22 L32 10 L58 42 Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
-      </span>
-      <span class="presenter-word">Aguamiel</span>
-      <span class="presenter-divider" aria-hidden="true"></span>
-      <span class="presenter-sub">Hotel &amp; Club de Montaña</span>
-    </div>
-    <p class="hero-presents"><strong>Hotel &amp; Club de Montaña Aguamiel</strong> se enorgullece en presentar</p>
-
-    <div class="hero-wordmark-wrap">
-      <img class="hero-wordmark" src="assets/logo-chef-michelin.png" alt="Chef Michelin Luis Ojeda deleita los Páramos Mágicos de Capacho" width="1340" height="500">
-      <span class="hero-wordmark-shine" aria-hidden="true"></span>
+    <div class="hero-video-wrap">
+      <video
+        class="hero-video"
+        poster="assets/hero-poster.jpg"
+        width="1176" height="784"
+        autoplay muted playsinline preload="auto"
+        aria-hidden="true"
+      >
+        <source src="assets/hero-intro.webm" type="video/webm">
+        <source src="assets/hero-intro.mp4" type="video/mp4">
+      </video>
     </div>
     <h1 class="hero-title sr-only">Chef Michelin Luis Ojeda deleita los Páramos Mágicos de Capacho</h1>
 
@@ -118,8 +116,8 @@
 <section class="section section--cream menu-section" id="menu">
   <div class="container">
     <div class="menu-heading" data-reveal>
-      <h2 class="menu-title">Menú</h2>
-      <p class="menu-subtitle"><span class="script-accent">by</span> Luis Ojeda</p>
+      <img class="menu-title-wordmark" src="assets/logo-menu-by-luis.png" alt="Menú by Luis Ojeda" width="1192" height="564">
+      <h2 class="sr-only">Menú by Luis Ojeda</h2>
       <p class="menu-hint">Toca cada tiempo para descubrir el plato</p>
     </div>
 
