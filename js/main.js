@@ -120,4 +120,40 @@
     window.addEventListener('resize', updateProgress);
     updateProgress();
   }
+
+  /* ---------- chef badges carousel ---------- */
+  const badgesTrack = document.getElementById('badgesTrack');
+  const badgesDots = document.getElementById('badgesDots');
+
+  if (badgesTrack && badgesDots) {
+    const dots = Array.from(badgesDots.querySelectorAll('.dot'));
+    const cards = Array.from(badgesTrack.children);
+
+    const updateActiveDot = () => {
+      const trackCenter = badgesTrack.scrollLeft + badgesTrack.clientWidth / 2;
+      let closest = 0;
+      let closestDist = Infinity;
+      cards.forEach((card, i) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const dist = Math.abs(cardCenter - trackCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closest = i;
+        }
+      });
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === closest));
+    };
+
+    let scrollTimeout;
+    badgesTrack.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(updateActiveDot, 80);
+    }, { passive: true });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      });
+    });
+  }
 })();
