@@ -279,9 +279,11 @@ a{color:inherit;text-decoration:none;}
 }
 .section--wine .section-title{color:var(--cream);}
 .lede{
+  font-family:'Manrope',sans-serif;font-weight:200;
   font-size:1.28rem;line-height:1.75;color:#4a2530;
   text-align:center;
 }
+.lede strong{font-weight:400;color:var(--wine-700);}
 
 /* ============ CHEF ============ */
 .chef-section{padding:0;overflow:hidden;}
