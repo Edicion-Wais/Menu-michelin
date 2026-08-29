@@ -216,6 +216,21 @@ a{color:inherit;text-decoration:none;}
 }
 .signature.small{font-size:1.7em;}
 
+.hero-pattern-strip{
+  position:absolute;left:0;right:0;bottom:0;height:110px;
+  background-image:url("../assets/pattern-swirls.png");
+  background-repeat:repeat-x;
+  background-position:0 bottom;
+  background-size:208px 110px;
+  opacity:.9;
+  pointer-events:none;
+  animation:patternDrift 26s linear infinite;
+}
+@keyframes patternDrift{
+  from{background-position-x:0;}
+  to{background-position-x:-208px;}
+}
+
 .scroll-cue{
   position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:10px;
