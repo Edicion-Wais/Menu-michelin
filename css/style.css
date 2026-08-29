@@ -282,7 +282,7 @@ a{color:inherit;text-decoration:none;}
   font-size:1.28rem;line-height:1.75;color:#4a2530;
   text-align:center;
 }
-.lede strong{font-weight:400;color:var(--wine-700);}
+.lede strong{font-weight:700;font-style:italic;color:var(--wine-700);}
 
 /* ============ CHEF ============ */
 .chef-section{padding:0;overflow:hidden;}
