@@ -229,6 +229,11 @@ a{color:inherit;text-decoration:none;}
   0%,100%{opacity:.4;}
   50%{opacity:.9;}
 }
+.hero-pattern-strip--top{
+  bottom:auto;top:0;
+  transform:scaleY(-1);
+  animation-delay:1.1s;
+}
 
 .scroll-cue{
   position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
