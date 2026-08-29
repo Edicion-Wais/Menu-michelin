@@ -93,8 +93,12 @@ a{color:inherit;text-decoration:none;}
   display:flex;align-items:center;justify-content:space-between;
   color:var(--cream);
 }
-.brand{display:flex;align-items:center;font-family:var(--font-display);letter-spacing:.02em;}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);letter-spacing:.02em;}
 .brand-logo{height:36px;width:auto;display:block;}
+.brand-text{
+  font-family:'Manrope',sans-serif;font-weight:700;font-size:.9rem;
+  color:var(--cream);white-space:nowrap;
+}
 .main-nav{display:flex;gap:34px;}
 .main-nav a{
   font-family:var(--font-display);
@@ -116,6 +120,9 @@ a{color:inherit;text-decoration:none;}
 .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
 .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
+@media (max-width:560px){
+  .brand-text{display:none;}
+}
 @media (max-width:420px){
   .brand-logo{height:28px;}
 }
