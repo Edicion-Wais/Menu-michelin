@@ -217,18 +217,17 @@ a{color:inherit;text-decoration:none;}
 .signature.small{font-size:1.7em;}
 
 .hero-pattern-strip{
-  position:absolute;left:0;right:0;bottom:0;height:110px;
+  position:absolute;left:0;right:0;bottom:0;height:200px;
   background-image:url("../assets/pattern-swirls.png");
   background-repeat:repeat-x;
   background-position:0 bottom;
-  background-size:208px 110px;
-  opacity:.9;
+  background-size:376px 200px;
   pointer-events:none;
-  animation:patternDrift 26s linear infinite;
+  animation:patternTwinkle 3.2s ease-in-out infinite;
 }
-@keyframes patternDrift{
-  from{background-position-x:0;}
-  to{background-position-x:-208px;}
+@keyframes patternTwinkle{
+  0%,100%{opacity:.4;}
+  50%{opacity:.9;}
 }
 
 .scroll-cue{
