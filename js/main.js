@@ -121,6 +121,36 @@
     updateProgress();
   }
 
+  /* ---------- countdown to Sept 18 ---------- */
+  const cdDays = document.getElementById('cdDays');
+  const cdHours = document.getElementById('cdHours');
+  const cdMinutes = document.getElementById('cdMinutes');
+  const cdSeconds = document.getElementById('cdSeconds');
+
+  if (cdDays && cdHours && cdMinutes && cdSeconds) {
+    const target = new Date('2026-09-18T00:00:00');
+    const pad = (n) => String(n).padStart(2, '0');
+
+    const tickCountdown = () => {
+      const diff = target - new Date();
+      if (diff <= 0) {
+        cdDays.textContent = '00';
+        cdHours.textContent = '00';
+        cdMinutes.textContent = '00';
+        cdSeconds.textContent = '00';
+        return;
+      }
+      const totalSeconds = Math.floor(diff / 1000);
+      cdDays.textContent = pad(Math.floor(totalSeconds / 86400));
+      cdHours.textContent = pad(Math.floor((totalSeconds % 86400) / 3600));
+      cdMinutes.textContent = pad(Math.floor((totalSeconds % 3600) / 60));
+      cdSeconds.textContent = pad(totalSeconds % 60);
+    };
+
+    tickCountdown();
+    setInterval(tickCountdown, 1000);
+  }
+
   /* ---------- chef badges carousel: drag/swipe with momentum snap ---------- */
   const badgesViewport = document.getElementById('badgesViewport');
   const badgesTrack = document.getElementById('badgesTrack');

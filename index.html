@@ -77,10 +77,12 @@
 
 <!-- ===== CHEF ===== -->
 <section class="section section--wine chef-section" id="chef">
+  <div class="chef-pattern-strip chef-pattern-strip--left" aria-hidden="true"></div>
+  <div class="chef-pattern-strip chef-pattern-strip--right" aria-hidden="true"></div>
   <div class="chef-grid">
     <div class="chef-photo-wrap" data-reveal>
       <span class="chef-side-label" aria-hidden="true">Chef</span>
-      <img src="assets/chef-luis-ojeda.jpg" alt="Chef Luis Ojeda, chef ejecutivo de Benares Madrid, con los brazos cruzados vistiendo chaqueta de cocina blanca" loading="lazy" width="900" height="811">
+      <img src="assets/chef-cutout.png" alt="Chef Luis Ojeda, chef ejecutivo de Benares Madrid, con los brazos cruzados vistiendo chaqueta de cocina blanca" loading="lazy" width="697" height="1200">
     </div>
     <div class="chef-copy" data-reveal>
       <img class="gala-wordmark" src="assets/logo-gala-dirigida.png" alt="Una gala dirigida por" width="1783" height="514">
@@ -101,11 +103,11 @@
             <span class="badge-text">★ Estrella Michelin · Benares Londres</span>
           </li>
           <li class="badge-card">
-            <img src="assets/chef-luis-ojeda.jpg" alt="" loading="lazy">
+            <img src="assets/badge-chef-ejecutivo.jpg" alt="" loading="lazy">
             <span class="badge-text">★ Chef Ejecutivo · Benares Madrid</span>
           </li>
           <li class="badge-card">
-            <img src="assets/chef-luis-ojeda.jpg" alt="" loading="lazy">
+            <img src="assets/badge-cocina-india.jpg" alt="" loading="lazy">
             <span class="badge-text">★ Única cocina india Michelin de la península ibérica</span>
           </li>
         </ul>
@@ -133,7 +135,7 @@
 
     <ol class="courses" id="courses">
 
-      <li class="course" data-course="1">
+      <li class="course" data-course="1" data-reveal>
         <button class="course-head" aria-expanded="false">
           <span class="course-num">1<sup>er</sup></span>
           <span class="course-heading">
@@ -150,7 +152,7 @@
         </div>
       </li>
 
-      <li class="course" data-course="2">
+      <li class="course" data-course="2" data-reveal>
         <button class="course-head" aria-expanded="false">
           <span class="course-num">2<sup>do</sup></span>
           <span class="course-heading">
@@ -168,7 +170,7 @@
         </div>
       </li>
 
-      <li class="course" data-course="3">
+      <li class="course" data-course="3" data-reveal>
         <button class="course-head" aria-expanded="false">
           <span class="course-num">3<sup>er</sup></span>
           <span class="course-heading">
@@ -184,7 +186,7 @@
         </div>
       </li>
 
-      <li class="course" data-course="4">
+      <li class="course" data-course="4" data-reveal>
         <button class="course-head" aria-expanded="false">
           <span class="course-num">4<sup>to</sup></span>
           <span class="course-heading">
@@ -200,7 +202,7 @@
         </div>
       </li>
 
-      <li class="course" data-course="5">
+      <li class="course" data-course="5" data-reveal>
         <button class="course-head" aria-expanded="false">
           <span class="course-num">5<sup>to</sup></span>
           <span class="course-heading">
@@ -216,7 +218,7 @@
         </div>
       </li>
 
-      <li class="course" data-course="6">
+      <li class="course" data-course="6" data-reveal>
         <button class="course-head" aria-expanded="false">
           <span class="course-num">6<sup>to</sup></span>
           <span class="course-heading">
@@ -233,7 +235,7 @@
         </div>
       </li>
 
-      <li class="course" data-course="7">
+      <li class="course" data-course="7" data-reveal>
         <button class="course-head" aria-expanded="false">
           <span class="course-num">7<sup>mo</sup></span>
           <span class="course-heading">
@@ -249,7 +251,7 @@
         </div>
       </li>
 
-      <li class="course" data-course="8">
+      <li class="course" data-course="8" data-reveal>
         <button class="course-head" aria-expanded="false">
           <span class="course-num">8<sup>vo</sup></span>
           <span class="course-heading">
@@ -265,7 +267,7 @@
         </div>
       </li>
 
-      <li class="course" data-course="9">
+      <li class="course" data-course="9" data-reveal>
         <button class="course-head" aria-expanded="false">
           <span class="course-num">9<sup>no</sup></span>
           <span class="course-heading">
@@ -288,6 +290,29 @@
 <!-- ===== EVENTO / FOOTER ===== -->
 <footer class="section section--wine footer" id="evento" data-reveal>
   <div class="container narrow center">
+    <div class="countdown" id="countdown" aria-label="Cuenta regresiva para el evento del 18 de septiembre">
+      <p class="countdown-label">Faltan para la gala</p>
+      <div class="countdown-grid">
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cdDays">00</span>
+          <span class="countdown-caption">Días</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cdHours">00</span>
+          <span class="countdown-caption">Horas</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cdMinutes">00</span>
+          <span class="countdown-caption">Min</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-value" id="cdSeconds">00</span>
+          <span class="countdown-caption">Seg</span>
+        </div>
+      </div>
+      <p class="countdown-date">18 de septiembre</p>
+    </div>
+
     <div class="footer-logo">
       <img src="assets/logo-aguamiel.png" alt="Aguamiel · Hotel &amp; Club de Montaña" width="1506" height="166">
     </div>
@@ -315,7 +340,13 @@
       <li>AsistPlus</li>
     </ul>
 
-    <p class="footer-fine">Táchira, Venezuela</p>
+    <ul class="social-handles">
+      <li><a href="https://www.instagram.com/clubdemontana.aguamiel/" target="_blank" rel="noopener">@clubdemontana.aguamiel</a></li>
+      <li><a href="https://www.instagram.com/glampingaguamiel/" target="_blank" rel="noopener">@glampingaguamiel</a></li>
+      <li><a href="https://www.instagram.com/paramosmagicosdecapacho/" target="_blank" rel="noopener">@paramosmagicosdecapacho</a></li>
+      <li><a href="https://www.instagram.com/aerolineasestelar/" target="_blank" rel="noopener">@aerolineaestelar</a></li>
+      <li><a href="https://www.instagram.com/luisojedachef/" target="_blank" rel="noopener">@luisojedachef</a></li>
+    </ul>
   </div>
 </footer>
 
