@@ -287,20 +287,27 @@ a{color:inherit;text-decoration:none;}
   font-size:1.18rem;color:var(--cream-2);max-width:46ch;margin:0 0 28px;
 }
 .badges-carousel{margin-top:8px;}
+.badges-viewport{overflow:hidden;padding:10px 0 14px;}
 .badges-track{
-  list-style:none;margin:0;padding:0 0 4px;
+  list-style:none;margin:0;padding:0;
   display:flex;gap:14px;
-  overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
+  cursor:grab;touch-action:pan-y;user-select:none;
+  will-change:transform;
 }
-.badges-track::-webkit-scrollbar{display:none;}
+.badges-track.is-dragging{cursor:grabbing;}
 .badge-card{
   position:relative;flex:0 0 auto;width:210px;height:150px;
-  border-radius:8px;overflow:hidden;scroll-snap-align:start;
+  border-radius:8px;overflow:hidden;
   box-shadow:0 14px 26px -10px rgba(0,0,0,.55);
+  transform:scale(.9);opacity:.55;
+  transition:transform .35s ease, opacity .35s ease;
+  will-change:transform,opacity;
 }
-.badge-card img{width:100%;height:100%;object-fit:cover;display:block;}
+.badge-card.is-active{transform:scale(1.04);opacity:1;}
+.badge-card img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  -webkit-user-drag:none;pointer-events:none;
+}
 .badge-card::after{
   content:"";position:absolute;inset:0;
   background:linear-gradient(to top, rgba(18,4,9,.88), rgba(18,4,9,.1) 65%);
@@ -310,7 +317,7 @@ a{color:inherit;text-decoration:none;}
   font-family:'Manrope',sans-serif;font-weight:700;font-size:.85rem;color:var(--gold-light);
   line-height:1.35;
 }
-.badges-dots{display:flex;gap:6px;margin-top:14px;}
+.badges-dots{display:flex;gap:6px;margin-top:14px;justify-content:center;}
 .badges-dots .dot{width:6px;height:6px;border-radius:50%;background:rgba(226,196,140,.3);transition:background .3s ease;}
 .badges-dots .dot.active{background:var(--gold-light);}
 
@@ -322,8 +329,6 @@ a{color:inherit;text-decoration:none;}
   .chef-copy{padding:32px 28px 70px;text-align:center;}
   .gala-wordmark,.chef-name-wordmark{margin-left:auto;margin-right:auto;}
   .chef-bio{margin-left:auto;margin-right:auto;}
-  .badges-track{justify-content:flex-start;padding-left:2px;}
-  .badges-dots{justify-content:center;}
 }
 
 /* ============ MENU ============ */

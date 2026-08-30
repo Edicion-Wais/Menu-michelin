@@ -121,39 +121,125 @@
     updateProgress();
   }
 
-  /* ---------- chef badges carousel ---------- */
+  /* ---------- chef badges carousel: drag/swipe with momentum snap ---------- */
+  const badgesViewport = document.getElementById('badgesViewport');
   const badgesTrack = document.getElementById('badgesTrack');
   const badgesDots = document.getElementById('badgesDots');
 
-  if (badgesTrack && badgesDots) {
+  if (badgesViewport && badgesTrack && badgesDots) {
     const dots = Array.from(badgesDots.querySelectorAll('.dot'));
     const cards = Array.from(badgesTrack.children);
 
-    const updateActiveDot = () => {
-      const trackCenter = badgesTrack.scrollLeft + badgesTrack.clientWidth / 2;
-      let closest = 0;
-      let closestDist = Infinity;
-      cards.forEach((card, i) => {
-        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-        const dist = Math.abs(cardCenter - trackCenter);
-        if (dist < closestDist) {
-          closestDist = dist;
-          closest = i;
-        }
-      });
-      dots.forEach((dot, i) => dot.classList.toggle('active', i === closest));
+    let activeIndex = 0;
+    let currentOffset = 0;
+    let isDragging = false;
+    let startX = 0;
+    let startOffset = 0;
+    let velocitySamples = [];
+    let activePointerId = null;
+
+    const offsetForIndex = (i) => {
+      const card = cards[i];
+      return badgesViewport.clientWidth / 2 - (card.offsetLeft + card.offsetWidth / 2);
     };
 
-    let scrollTimeout;
-    badgesTrack.addEventListener('scroll', () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(updateActiveDot, 80);
-    }, { passive: true });
+    const clampIndex = (i) => Math.max(0, Math.min(cards.length - 1, i));
+
+    const nearestIndexToOffset = (offset) => {
+      let nearest = 0;
+      let nearestDist = Infinity;
+      cards.forEach((_, i) => {
+        const dist = Math.abs(offsetForIndex(i) - offset);
+        if (dist < nearestDist) {
+          nearestDist = dist;
+          nearest = i;
+        }
+      });
+      return nearest;
+    };
+
+    const setTransform = (offset, animate) => {
+      badgesTrack.style.transition = animate
+        ? 'transform .5s cubic-bezier(.22,.61,.36,1)'
+        : 'none';
+      badgesTrack.style.transform = `translateX(${offset}px)`;
+      currentOffset = offset;
+    };
+
+    const setActiveClasses = (index) => {
+      cards.forEach((card, i) => card.classList.toggle('is-active', i === index));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    };
+
+    const goToIndex = (i, animate) => {
+      activeIndex = clampIndex(i);
+      setTransform(offsetForIndex(activeIndex), animate);
+      setActiveClasses(activeIndex);
+    };
+
+    // Initial centering (no animation on load).
+    goToIndex(0, false);
+
+    window.addEventListener('resize', () => goToIndex(activeIndex, false));
+
+    const onPointerDown = (e) => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      isDragging = true;
+      activePointerId = e.pointerId;
+      badgesTrack.setPointerCapture(e.pointerId);
+      badgesTrack.classList.add('is-dragging');
+      badgesTrack.style.transition = 'none';
+      startX = e.clientX;
+      startOffset = currentOffset;
+      velocitySamples = [{ x: startX, t: performance.now() }];
+    };
+
+    const onPointerMove = (e) => {
+      if (!isDragging) return;
+      const x = e.clientX;
+      const dx = x - startX;
+      currentOffset = startOffset + dx;
+      badgesTrack.style.transform = `translateX(${currentOffset}px)`;
+
+      velocitySamples.push({ x, t: performance.now() });
+      if (velocitySamples.length > 6) velocitySamples.shift();
+
+      setActiveClasses(nearestIndexToOffset(currentOffset));
+    };
+
+    const endDrag = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      badgesTrack.classList.remove('is-dragging');
+
+      let velocity = 0;
+      if (velocitySamples.length >= 2) {
+        const first = velocitySamples[0];
+        const last = velocitySamples[velocitySamples.length - 1];
+        const dt = last.t - first.t;
+        if (dt > 0) velocity = (last.x - first.x) / dt; // px/ms
+      }
+
+      const momentum = velocity * 160;
+      const target = nearestIndexToOffset(currentOffset + momentum);
+      goToIndex(target, true);
+    };
+
+    const onPointerUp = (e) => {
+      if (activePointerId !== null && badgesTrack.hasPointerCapture(activePointerId)) {
+        badgesTrack.releasePointerCapture(activePointerId);
+      }
+      activePointerId = null;
+      endDrag();
+    };
+
+    badgesTrack.addEventListener('pointerdown', onPointerDown);
+    badgesTrack.addEventListener('pointermove', onPointerMove);
+    badgesTrack.addEventListener('pointerup', onPointerUp);
+    badgesTrack.addEventListener('pointercancel', onPointerUp);
 
     dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
-      });
+      dot.addEventListener('click', () => goToIndex(i, true));
     });
   }
 })();
