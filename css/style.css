@@ -376,8 +376,9 @@ a{color:inherit;text-decoration:none;}
 .course-heading{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;gap:8px;}
 .course-title-img{height:68px;width:auto;display:block;margin:0 auto;}
 .course-name{
-  font-family:'Manrope',sans-serif;font-weight:700;letter-spacing:.4em;
-  font-size:clamp(1rem,2.2vw,1.2rem);color:var(--ink);
+  display:inline-block;
+  font-family:'Manrope',sans-serif;font-weight:700;font-size:.78rem;
+  letter-spacing:.14em;text-transform:uppercase;color:#8a6a55;
 }
 .course-chevron{
   width:14px;height:14px;flex-shrink:0;position:relative;
@@ -405,6 +406,7 @@ a{color:inherit;text-decoration:none;}
 @media (max-width:560px){
   .course-head{gap:14px;}
   .course-title-img{height:54px;}
+  .menu-hint{font-size:.58rem;letter-spacing:.1em;white-space:nowrap;}
 }
 
 /* ============ FOOTER ============ */
@@ -460,7 +462,7 @@ a{color:inherit;text-decoration:none;}
   from{transform:translateX(-50%);}
   to{transform:translateX(0%);}
 }
-.sponsor-item{flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:34px;}
+.sponsor-item{flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:64px;}
 .sponsor-logo-link{display:flex;align-items:center;height:100%;}
 .sponsor-logo-link:hover .sponsor-logo{opacity:1;}
 .sponsor-logo{height:100%;width:auto;display:block;opacity:.8;transition:opacity .25s ease;}
@@ -475,6 +477,13 @@ a{color:inherit;text-decoration:none;}
   transition:opacity .25s ease, color .25s ease;
 }
 .social-handles a:hover{opacity:1;color:var(--gold-light);}
+
+@media (max-width:560px){
+  .sponsor-item{height:112px;}
+  .sponsors-track{gap:44px;}
+  .social-handles{gap:8px 10px;}
+  .social-handles a{font-size:.58rem;}
+}
 
 /* ============ TO TOP ============ */
 .to-top{
