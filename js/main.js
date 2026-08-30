@@ -1,14 +1,6 @@
 (() => {
   'use strict';
 
-  /* ---------- sponsors row: slide-in-from-left on page load ---------- */
-  const sponsorsLoadIn = document.querySelector('.sponsors-load-in');
-  if (sponsorsLoadIn) {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => sponsorsLoadIn.classList.add('is-in'));
-    });
-  }
-
   /* ---------- header state on scroll ---------- */
   const header = document.getElementById('siteHeader');
   const toTopBtn = document.getElementById('toTop');
