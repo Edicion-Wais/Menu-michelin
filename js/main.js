@@ -103,24 +103,6 @@
     });
   });
 
-  /* ---------- menu progress bar ---------- */
-  const menuSection = document.getElementById('menu');
-  const progressBar = document.getElementById('menuProgressBar');
-
-  if (menuSection && progressBar) {
-    const updateProgress = () => {
-      const rect = menuSection.getBoundingClientRect();
-      const viewportH = window.innerHeight;
-      const total = rect.height + viewportH;
-      const traveled = viewportH - rect.top;
-      const pct = Math.min(100, Math.max(0, (traveled / total) * 100));
-      progressBar.style.width = `${pct}%`;
-    };
-    document.addEventListener('scroll', updateProgress, { passive: true });
-    window.addEventListener('resize', updateProgress);
-    updateProgress();
-  }
-
   /* ---------- countdown to Sept 18 ---------- */
   const cdDays = document.getElementById('cdDays');
   const cdHours = document.getElementById('cdHours');

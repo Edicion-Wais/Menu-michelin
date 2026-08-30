@@ -95,7 +95,7 @@
         restaurante de alta cocina india reconocido por la Guía Michelin
         en toda la península ibérica.
       </p>
-      <div class="badges-carousel">
+      <div class="badges-carousel" data-reveal>
         <div class="badges-viewport" id="badgesViewport">
         <ul class="badges-track" id="badgesTrack">
           <li class="badge-card">
@@ -129,17 +129,12 @@
       <p class="menu-hint">Toca cada tiempo para descubrir el plato</p>
     </div>
 
-    <div class="menu-progress" aria-hidden="true">
-      <div class="menu-progress-bar" id="menuProgressBar"></div>
-    </div>
-
     <ol class="courses" id="courses">
 
       <li class="course" data-course="1" data-reveal>
         <button class="course-head" aria-expanded="false">
-          <span class="course-num">1<sup>er</sup></span>
           <span class="course-heading">
-            <span class="course-kind script-accent">Coctel de bienvenida</span>
+            <img class="course-title-img" src="assets/course-title-1.png" alt="1er tiempo — Coctel de bienvenida" width="488" height="138">
             <span class="course-name">Nimbu Pani</span>
           </span>
           <span class="course-chevron" aria-hidden="true"></span>
@@ -154,9 +149,8 @@
 
       <li class="course" data-course="2" data-reveal>
         <button class="course-head" aria-expanded="false">
-          <span class="course-num">2<sup>do</sup></span>
           <span class="course-heading">
-            <span class="course-kind script-accent">Snacks</span>
+            <img class="course-title-img" src="assets/course-title-2.png" alt="2do tiempo — Snacks" width="344" height="137">
             <span class="course-name">Pani Puri</span>
           </span>
           <span class="course-chevron" aria-hidden="true"></span>
@@ -172,9 +166,8 @@
 
       <li class="course" data-course="3" data-reveal>
         <button class="course-head" aria-expanded="false">
-          <span class="course-num">3<sup>er</sup></span>
           <span class="course-heading">
-            <span class="course-kind script-accent">Entrante</span>
+            <img class="course-title-img" src="assets/course-title-3.png" alt="3er tiempo — Entrante" width="337" height="139">
             <span class="course-name">Samosa Ragda</span>
           </span>
           <span class="course-chevron" aria-hidden="true"></span>
@@ -188,9 +181,8 @@
 
       <li class="course" data-course="4" data-reveal>
         <button class="course-head" aria-expanded="false">
-          <span class="course-num">4<sup>to</sup></span>
           <span class="course-heading">
-            <span class="course-kind script-accent">Entrante</span>
+            <img class="course-title-img" src="assets/course-title-4.png" alt="4to tiempo — Entrante" width="333" height="138">
             <span class="course-name">Lomo de Pargo en Salsa Malabar</span>
           </span>
           <span class="course-chevron" aria-hidden="true"></span>
@@ -204,9 +196,8 @@
 
       <li class="course" data-course="5" data-reveal>
         <button class="course-head" aria-expanded="false">
-          <span class="course-num">5<sup>to</sup></span>
           <span class="course-heading">
-            <span class="course-kind script-accent">Principal</span>
+            <img class="course-title-img" src="assets/course-title-5.png" alt="5to tiempo — Principal" width="331" height="143">
             <span class="course-name">Costillas de Cordero</span>
           </span>
           <span class="course-chevron" aria-hidden="true"></span>
@@ -220,9 +211,8 @@
 
       <li class="course" data-course="6" data-reveal>
         <button class="course-head" aria-expanded="false">
-          <span class="course-num">6<sup>to</sup></span>
           <span class="course-heading">
-            <span class="course-kind script-accent">Principal</span>
+            <img class="course-title-img" src="assets/course-title-6.png" alt="6to tiempo — Principal" width="327" height="142">
             <span class="course-name">Lomito de Ternera en Salsa Nihari</span>
           </span>
           <span class="course-chevron" aria-hidden="true"></span>
@@ -237,9 +227,8 @@
 
       <li class="course" data-course="7" data-reveal>
         <button class="course-head" aria-expanded="false">
-          <span class="course-num">7<sup>mo</sup></span>
           <span class="course-heading">
-            <span class="course-kind script-accent">Cortante</span>
+            <img class="course-title-img" src="assets/course-title-7.png" alt="7mo tiempo — Cortante" width="355" height="139">
             <span class="course-name">Soda de Té Negro y Lima</span>
           </span>
           <span class="course-chevron" aria-hidden="true"></span>
@@ -253,9 +242,8 @@
 
       <li class="course" data-course="8" data-reveal>
         <button class="course-head" aria-expanded="false">
-          <span class="course-num">8<sup>vo</sup></span>
           <span class="course-heading">
-            <span class="course-kind script-accent">Postre</span>
+            <img class="course-title-img" src="assets/course-title-8.png" alt="8vo tiempo — Postre" width="340" height="138">
             <span class="course-name">Crema Benares</span>
           </span>
           <span class="course-chevron" aria-hidden="true"></span>
@@ -269,9 +257,8 @@
 
       <li class="course" data-course="9" data-reveal>
         <button class="course-head" aria-expanded="false">
-          <span class="course-num">9<sup>no</sup></span>
           <span class="course-heading">
-            <span class="course-kind script-accent">Petit fours de cierre</span>
+            <img class="course-title-img" src="assets/course-title-9.png" alt="9no tiempo — Petit fours de cierre" width="427" height="133">
             <span class="course-name">Café Especiado Licor</span>
           </span>
           <span class="course-chevron" aria-hidden="true"></span>
@@ -288,9 +275,9 @@
 </section>
 
 <!-- ===== EVENTO / FOOTER ===== -->
-<footer class="section section--wine footer" id="evento" data-reveal>
+<footer class="section section--wine footer" id="evento">
   <div class="container narrow center">
-    <div class="countdown" id="countdown" aria-label="Cuenta regresiva para el evento del 18 de septiembre">
+    <div class="countdown" id="countdown" data-reveal aria-label="Cuenta regresiva para el evento del 18 de septiembre">
       <p class="countdown-label">Faltan para la gala</p>
       <div class="countdown-grid">
         <div class="countdown-unit">
@@ -313,17 +300,17 @@
       <p class="countdown-date">18 de septiembre</p>
     </div>
 
-    <div class="footer-logo">
+    <div class="footer-logo" data-reveal>
       <img src="assets/logo-aguamiel.png" alt="Aguamiel · Hotel &amp; Club de Montaña" width="1506" height="166">
     </div>
 
-    <img class="footer-wordmark" src="assets/logo-chef-michelin.png" alt="Chef Michelin Luis Ojeda deleita los Páramos Mágicos de Capacho" width="1340" height="500">
+    <img class="footer-wordmark" src="assets/logo-chef-michelin.png" alt="Chef Michelin Luis Ojeda deleita los Páramos Mágicos de Capacho" width="1340" height="500" data-reveal>
     <h2 class="sr-only">Chef Michelin Luis Ojeda deleita los Páramos Mágicos de Capacho</h2>
 
     <div class="rule light" aria-hidden="true"></div>
 
     <p class="sponsors-label">Patrocinantes oficiales</p>
-    <ul class="sponsors">
+    <ul class="sponsors" data-reveal>
       <li>
         <a href="https://www.instagram.com/aerolineasestelar/?hl=es" target="_blank" rel="noopener" class="sponsor-logo-link">
           <img src="assets/logo-estelar.png" alt="Estelar" class="sponsor-logo" width="698" height="125">
@@ -340,7 +327,7 @@
       <li>AsistPlus</li>
     </ul>
 
-    <ul class="social-handles">
+    <ul class="social-handles" data-reveal>
       <li><a href="https://www.instagram.com/clubdemontana.aguamiel/" target="_blank" rel="noopener">@clubdemontana.aguamiel</a></li>
       <li><a href="https://www.instagram.com/glampingaguamiel/" target="_blank" rel="noopener">@glampingaguamiel</a></li>
       <li><a href="https://www.instagram.com/paramosmagicosdecapacho/" target="_blank" rel="noopener">@paramosmagicosdecapacho</a></li>
