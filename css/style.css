@@ -249,16 +249,16 @@ a{color:inherit;text-decoration:none;}
 /* ============ CHEF ============ */
 .chef-section{padding:0;overflow:hidden;position:relative;}
 .chef-pattern-strip{
-  position:absolute;top:0;bottom:0;width:220px;
+  position:absolute;top:0;bottom:0;width:300px;
   background-image:url("../assets/pattern-swirls-vertical.png");
   background-repeat:repeat-y;
-  background-size:220px 314px;
+  background-size:300px 428px;
   opacity:.5;
   pointer-events:none;
   animation:patternTwinkle 3.2s ease-in-out infinite;
   z-index:0;
 }
-.chef-pattern-strip--left{left:0;transform:scaleY(-1);}
+.chef-pattern-strip--left{left:0;transform:scaleX(-1) scaleY(-1);}
 .chef-pattern-strip--right{right:0;transform:scaleX(-1) scaleY(-1);}
 .chef-grid{
   position:relative;z-index:1;
