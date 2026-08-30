@@ -219,10 +219,24 @@
       setActiveClasses(nearestIndexToOffset(currentOffset));
     };
 
-    const endDrag = () => {
+    const endDrag = (e) => {
       if (!isDragging) return;
       isDragging = false;
       badgesTrack.classList.remove('is-dragging');
+
+      // A tap (negligible movement) on a specific card jumps straight to it —
+      // pointer capture during drag means a plain 'click' listener on the
+      // card never fires, so the tap target has to be resolved here instead.
+      const totalMove = Math.abs(currentOffset - startOffset);
+      if (totalMove < 6 && e) {
+        const hit = document.elementFromPoint(e.clientX, e.clientY);
+        const tappedCard = hit ? hit.closest('.badge-card') : null;
+        const tappedIndex = tappedCard ? cards.indexOf(tappedCard) : -1;
+        if (tappedIndex !== -1) {
+          goToIndex(tappedIndex, true);
+          return;
+        }
+      }
 
       let velocity = 0;
       if (velocitySamples.length >= 2) {
@@ -242,7 +256,7 @@
         badgesTrack.releasePointerCapture(activePointerId);
       }
       activePointerId = null;
-      endDrag();
+      endDrag(e);
     };
 
     badgesTrack.addEventListener('pointerdown', onPointerDown);
