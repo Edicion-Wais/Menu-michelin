@@ -455,8 +455,6 @@ a{color:inherit;text-decoration:none;}
   to{transform:translateX(0%);}
 }
 .sponsor-item{flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:64px;}
-.sponsor-logo-link{display:flex;align-items:center;height:100%;}
-.sponsor-logo-link:hover .sponsor-logo{opacity:1;}
 .sponsor-logo{height:100%;width:auto;display:block;opacity:.8;transition:opacity .25s ease;}
 
 .social-handles{
