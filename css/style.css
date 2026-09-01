@@ -240,7 +240,7 @@ a{color:inherit;text-decoration:none;}
   width:min(520px,88vw);height:auto;margin:0 auto;
 }
 .lede{
-  font-family:'Manrope',sans-serif;font-weight:200;
+  font-family:'Manrope',sans-serif;font-weight:400;
   font-size:1.28rem;line-height:1.75;color:#4a2530;
   text-align:center;
 }
@@ -455,6 +455,7 @@ a{color:inherit;text-decoration:none;}
   to{transform:translateX(0%);}
 }
 .sponsor-item{flex:0 0 auto;display:flex;align-items:center;justify-content:center;height:64px;}
+.sponsor-item a{display:flex;align-items:center;height:100%;}
 .sponsor-logo{height:100%;width:auto;display:block;opacity:.8;transition:opacity .25s ease;}
 
 .social-handles{
