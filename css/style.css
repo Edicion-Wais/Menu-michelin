@@ -366,6 +366,7 @@ a{color:inherit;text-decoration:none;}
   padding:26px 6px;font:inherit;color:inherit;
 }
 .course-heading{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;gap:8px;}
+.course-title-img{height:68px;width:auto;display:block;margin:0 auto;}
 .course-title-text{display:flex;flex-direction:column;align-items:center;}
 .course-title-line{
   display:flex;align-items:baseline;justify-content:center;gap:.22em;
