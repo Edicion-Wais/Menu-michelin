@@ -268,4 +268,17 @@
       dot.addEventListener('click', () => goToIndex(i, true));
     });
   }
+
+  /* ---------- sponsors marquee: pause only for a real mouse hover ---------- */
+  const sponsorsMarquee = document.querySelector('.sponsors-marquee');
+  const sponsorsTrack = document.querySelector('.sponsors-track');
+
+  if (sponsorsMarquee && sponsorsTrack) {
+    sponsorsMarquee.addEventListener('pointerenter', (e) => {
+      if (e.pointerType === 'mouse') sponsorsTrack.classList.add('is-paused');
+    });
+    sponsorsMarquee.addEventListener('pointerleave', (e) => {
+      if (e.pointerType === 'mouse') sponsorsTrack.classList.remove('is-paused');
+    });
+  }
 })();
