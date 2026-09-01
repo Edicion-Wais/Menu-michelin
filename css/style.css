@@ -449,7 +449,9 @@ a{color:inherit;text-decoration:none;}
   display:flex;align-items:center;gap:52px;width:max-content;
   animation:sponsorsMarquee 48s linear infinite;
 }
-.sponsors-marquee:hover .sponsors-track{animation-play-state:paused;}
+@media (hover:hover){
+  .sponsors-marquee:hover .sponsors-track{animation-play-state:paused;}
+}
 @keyframes sponsorsMarquee{
   from{transform:translateX(-50%);}
   to{transform:translateX(0%);}
