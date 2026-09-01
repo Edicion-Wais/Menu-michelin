@@ -394,12 +394,6 @@ a{color:inherit;text-decoration:none;}
   margin:0 0 10px;font-size:1.08rem;color:#5a3540;
 }
 .course-body-inner p:last-child{margin-bottom:0;}
-.course-body-inner .course-name{
-  display:block;text-align:center;
-  font-family:'Manrope',sans-serif;font-weight:700;font-size:.78rem;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dim);
-  margin:0 0 10px;
-}
 
 @media (max-width:560px){
   .course-head{gap:14px;}
