@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Íconos del Táchira · Día Mundial del Turismo</title>
+<meta name="description" content="38 íconos del Táchira —fauna, paisajes, fe, sabores y tradiciones— y la historia de cada uno. Centros de mesa del Día Mundial del Turismo en Táchira.">
+<meta name="theme-color" content="#1f3a2c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%231f3a2c%22/%3E%3Ccircle cx=%2246%22 cy=%2218%22 r=%226%22 fill=%22%23e2a72e%22/%3E%3Cpath d=%22M6 52l16-22 9 11 9-15 18 26z%22 fill=%22%23f6efe2%22/%3E%3C/svg%3E">
+
+<meta property="og:title" content="Íconos del Táchira · Día Mundial del Turismo">
+<meta property="og:description" content="Descubre la historia de los 38 íconos que nos representan.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/turismo.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="#inicio" class="topbar-brand">Táchira<span>·</span>Turismo</a>
+  <a href="#iconos" class="topbar-cta">Ver los íconos</a>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+    <p class="eyebrow">27 de septiembre · Día Mundial del Turismo</p>
+    <h1 class="hero-title">
+      <span class="hero-small">Íconos del</span>
+      <span class="hero-big">Táchira</span>
+    </h1>
+    <p class="hero-lede">
+      Treinta y ocho símbolos de nuestra tierra —aves, montañas, santuarios, sabores y oficios—
+      llegan a cada mesa. Descubre la historia detrás de cada uno.
+    </p>
+    <a href="#iconos" class="btn">Explorar los 38 íconos</a>
+  </div>
+
+  <svg class="hero-mountains" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+    <path class="m3" d="M0 190 L120 120 L230 170 L360 70 L480 150 L600 90 L720 160 L860 60 L990 140 L1110 80 L1250 150 L1360 100 L1440 130 V320 H0Z"/>
+    <path class="m2" d="M0 240 L140 170 L260 220 L400 140 L540 210 L690 150 L820 220 L980 150 L1120 215 L1270 160 L1440 210 V320 H0Z"/>
+    <path class="m1" d="M0 290 L180 230 L360 280 L540 240 L720 285 L900 235 L1080 280 L1260 245 L1440 275 V320 H0Z"/>
+  </svg>
+</section>
+
+<!-- ===== INTRO ===== -->
+<section class="intro">
+  <div class="intro-grid">
+    <div>
+      <p class="eyebrow eyebrow--dark">Bienvenidos</p>
+      <h2 class="section-title">Un estado que se cuenta en <em>38 historias</em></h2>
+    </div>
+    <div class="intro-text">
+      <p>
+        Desde 1980, cada 27 de septiembre el mundo celebra el Día Mundial del Turismo para recordar
+        que viajar es una forma de conocernos, de valorar lo propio y de abrir la puerta a quien nos visita.
+      </p>
+      <p>
+        El Táchira lo celebra con lo que mejor lo describe: la fauna de sus bosques nublados, la fe de sus
+        santuarios, la alegría de su feria, el aroma de su café y las manos de sus artesanos.
+        Cada centro de mesa es una invitación a recorrer el estado. Toca cualquier ícono para leer su historia.
+      </p>
+    </div>
+  </div>
+
+  <ul class="stats" aria-label="El Táchira en números">
+    <li><strong>38</strong><span>íconos</span></li>
+    <li><strong>6</strong><span>rutas temáticas</span></li>
+    <li><strong>1561</strong><span>fundación de San Cristóbal</span></li>
+    <li><strong>∞</strong><span>razones para volver</span></li>
+  </ul>
+</section>
+
+<!-- ===== ICONOS ===== -->
+<section class="iconos" id="iconos">
+  <div class="iconos-head">
+    <p class="eyebrow eyebrow--dark">La colección</p>
+    <h2 class="section-title">Los íconos de nuestra tierra</h2>
+  </div>
+
+  <div class="filters" role="toolbar" aria-label="Filtrar por categoría" id="filters"></div>
+
+  <ol class="grid" id="grid" aria-live="polite"></ol>
+</section>
+
+<!-- ===== CIERRE ===== -->
+<section class="closing">
+  <p class="closing-quote">“El Táchira no se visita una sola vez:<br>se vuelve, porque siempre queda algo por descubrir.”</p>
+  <p class="closing-sign">Día Mundial del Turismo · Táchira, Venezuela</p>
+</section>
+
+<footer class="footer">
+  <p>Íconos del Táchira · Centros de mesa del Día Mundial del Turismo</p>
+</footer>
+
+<!-- ===== DETALLE ===== -->
+<dialog class="detail" id="detail" aria-labelledby="detailTitle">
+  <div class="detail-art" id="detailArt" aria-hidden="true"></div>
+  <div class="detail-body">
+    <button class="detail-close" id="detailClose" aria-label="Cerrar">×</button>
+    <p class="detail-meta" id="detailMeta"></p>
+    <h3 class="detail-title" id="detailTitle"></h3>
+    <p class="detail-place" id="detailPlace"></p>
+    <div class="detail-story" id="detailStory"></div>
+    <p class="detail-pieza" id="detailPieza"></p>
+    <nav class="detail-nav">
+      <button id="detailPrev" aria-label="Ícono anterior">← Anterior</button>
+      <button id="detailNext" aria-label="Ícono siguiente">Siguiente →</button>
+    </nav>
+  </div>
+</dialog>
+
+<script src="js/iconos.js"></script>
+<script src="js/turismo.js"></script>
+</body>
+</html>

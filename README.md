@@ -41,3 +41,19 @@ css/style.css      Estilos (paleta vino/dorado, tipografías, animaciones)
 js/main.js         Interactividad (acordeón del menú, scroll-spy, reveals)
 assets/            Imágenes y favicon
 ```
+
+## Íconos del Táchira (Día Mundial del Turismo)
+
+Página independiente en `turismo.html` (en Vercel: `/turismo`) con los 38
+íconos de los centros de mesa y la historia de cada uno.
+
+```
+turismo.html       Estructura de la página
+css/turismo.css    Estilos
+js/iconos.js       Datos: nombre, categoría, lugar, historia y tipo de pieza
+js/turismo.js      Grilla, filtros por categoría y ficha de detalle
+```
+
+Para editar un texto, cambia el ícono correspondiente en `js/iconos.js`.
+Cada ícono tiene enlace directo, útil para un QR en cada mesa:
+`/turismo#icono-12` abre directamente la historia del ícono 12.
