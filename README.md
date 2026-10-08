@@ -41,3 +41,9 @@ css/style.css      Estilos (paleta vino/dorado, tipografías, animaciones)
 js/main.js         Interactividad (acordeón del menú, scroll-spy, reveals)
 assets/            Imágenes y favicon
 ```
+
+## Web «Visita Táchira» (Día Mundial del Turismo)
+
+Página independiente en `turismo-tachira/` (se publica en `/turismo-tachira`).
+Los textos están en `turismo-tachira/js/data.js` y las fotos van en
+`turismo-tachira/img/` con los nombres listados en `img/LEEME.md`.
